@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research & Blog Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            --primary: #ff00ff;
+            --secondary: #00ffff;
+            --background: #0a0a0f;
+            --card-bg: #151520;
+            --text: #ffffff;
+            --text-secondary: #b3b3cc;
+            --highlight: #ff00ff;
+            --gradient-1: #ff00ff;
+            --gradient-2: #00ffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+            background: linear-gradient(
+                135deg,
+                var(--background) 0%,
+                #141422 100%
+            );
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 0, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            border-color: var(--primary);
+            box-shadow: 0 0 30px rgba(255, 0, 255, 0.2);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 255, 0.1), 
+                rgba(0, 255, 255, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .card:hover::before {
+            opacity: 1;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            border-radius: 12px;
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--text), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card-content {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .tag-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .tag {
+            background: rgba(255, 0, 255, 0.1);
+            color: var(--secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: rgba(255, 0, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .read-more {
+            color: var(--text);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 255, 0.1), 
+                rgba(0, 255, 255, 0.1));
+        }
+
+        .read-more:hover {
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            color: var(--background);
+            box-shadow: 0 0 20px rgba(255, 0, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .date {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        .platform-badge {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            background: linear-gradient(45deg, 
+                rgba(255, 0, 255, 0.1), 
+                rgba(0, 255, 255, 0.1));
+            color: var(--text);
+            border: 1px solid rgba(255, 0, 255, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
+            50% { text-shadow: 0 0 20px rgba(255, 0, 255, 0.8); }
+            100% { text-shadow: 0 0 10px rgba(255, 0, 255, 0.5); }
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Research Papers Section -->
+        <section>
+            <div class="section-header">
+                <h2 class="section-title">Research Papers</h2>
+                <p class="section-subtitle">Exploring the frontiers of technology and innovation</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h3>Machine Learning in Agricultural Optimization</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>A groundbreaking study on implementing advanced machine learning algorithms for optimizing crop yields and resource allocation in modern agriculture systems.</p>
+                        <div class="tag-container">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Agriculture</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Read Paper →</a>
+                        <span class="date">Oct 2023</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">🔬</div>
+                        <h3>Emergency Response Systems: A Modern Approach</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Comprehensive analysis and implementation of next-generation mobile-first emergency response systems for urban environments using cutting-edge web technologies.</p>
+                        <div class="tag-container">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">Emergency Services</span>
+                            <span class="tag">UX Design</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Read Paper →</a>
+                        <span class="date">Dec 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts Section -->
+        <section style="margin-top: 6rem;">
+            <div class="section-header">
+                <h2 class="section-title">Blog Posts</h2>
+                <p class="section-subtitle">Thoughts and insights on technology and innovation</p>
+            </div>
+            
+            <div class="grid">
+                <div class="card">
+                    <span class="platform-badge">Medium</span>
+                    <div class="card-header">
+                        <div class="card-icon">✍️</div>
+                        <h3>The Future of AI in Cinema</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>An in-depth exploration of how artificial intelligence is revolutionizing movie recommendations and transforming the modern cinema experience through personalized content delivery.</p>
+                        <div class="tag-container">
+                            <span class="tag">AI</span>
+                            <span class="tag">Cinema</span>
+                            <span class="tag">Technology</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Read on Medium →</a>
+                        <span class="date">Oct 15, 2023</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <span class="platform-badge">Dev.to</span>
+                    <div class="card-header">
+                        <div class="card-icon">🌾</div>
+                        <h3>Smart Agriculture: A Tech Revolution</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Comprehensive analysis of how modern technology and advanced data analysis are transforming traditional farming practices and improving agricultural sustainability.</p>
+                        <div class="tag-container">
+                            <span class="tag">AgriTech</span>
+                            <span class="tag">Sustainability</span>
+                            <span class="tag">Innovation</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="read-more">Read on Dev.to →</a>
+                        <span class="date">Nov 28, 2023</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate section titles with a more dramatic entrance
+        gsap.utils.toArray('.section-header').forEach(header => {
+            gsap.from(header.children, {
+                scrollTrigger: {
+                    trigger: header,
+                    start: "top 80%",
+                    toggleActions: "play none none reset"
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1.2,
+                stagger: 0.2,
+                ease: "power4.out"
+            });
+        });
+
+        // Animate cards with a stagger effect
+        gsap.utils.toArray('.card').forEach(card => {
+            gsap.from(card, {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reset"
+                },
+                y: 60,
+                opacity: 0,
+                duration: 1,
+                ease: "power3.out"
+            });
+        });
+
+        // Add hover effect to cards
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                gsap.to(card, {
+                    scale: 1.02,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+            });
+        });
+    </script>
+</body>
+</html>
