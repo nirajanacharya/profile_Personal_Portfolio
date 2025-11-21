@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply bg-darker text-light font-mono;
+  line-height: 1.6;
+  background-image: 
+    linear-gradient(0deg, rgba(100, 213, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(100, 213, 255, 0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px #ff0080, 0 0 40px #ff00ff; }
+  50% { box-shadow: 0 0 40px #ff0080, 0 0 80px #ff00ff; }
+}
+
+@keyframes neonFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 1; }
+}
+
+@keyframes cyanGlow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 1; }
+}
+
+@keyframes magentaPulse {
+  0%, 100% { box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff; }
+  50% { box-shadow: 0 0 35px #ff00ff, 0 0 60px #ff00ff; }
+}
+
+@keyframes greenGlow {
+  0%, 100% { box-shadow: 0 0 15px #00ff88, 0 0 30px #00ff88; }
+  50% { box-shadow: 0 0 35px #00ff88, 0 0 60px #00ff88; }
+}
+
+@keyframes frameRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px #baf880; }
+  50% { box-shadow: 0 0 20px #f7f0f3, 0 0 30px #f7d8e8; }
+  100% { box-shadow: 0 0 5px #e8e2e5; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes scanline {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.animate-glowPulse {
+  animation: glowPulse 2s infinite;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft 0.5s forwards;
+}
+
+.animate-glow {
+  animation: glow 2s infinite;
+}
+
+.animate-pulse-custom {
+  animation: pulse 2s infinite;
+}
+
+.animate-scanline {
+  animation: scanline 2s linear infinite;
+}
+
+.animate-neon-flicker {
+  animation: neonFlicker 2s ease-in-out infinite;
+}
+
+.animate-cyan-glow {
+  animation: cyanGlow 1.5s ease-in-out infinite;
+}
+
+.animate-magenta-pulse {
+  animation: magentaPulse 1.5s ease-in-out infinite;
+}
+
+.animate-green-glow {
+  animation: greenGlow 1.5s ease-in-out infinite;
+}
+
+.glow-neon-green {
+  box-shadow: none;
+}
+
+.glow-neon-cyan {
+  box-shadow: none;
+}
+
+.glow-neon-pink {
+  box-shadow: none;
+}
+
+.glow-neon-purple {
+  box-shadow: none;
+}
