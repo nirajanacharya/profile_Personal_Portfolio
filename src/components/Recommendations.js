@@ -3,16 +3,24 @@ import React from 'react';
 function Recommendations() {
   const recommendations = [
     {
-      name: 'Recommendation 1',
-      role: 'Tech Community',
-      text: 'Nirajan is an exceptional developer with great problem-solving skills and a passion for open source. His contributions to our projects have been invaluable.',
-      image: '/images/profile.jpg',
+      name: 'Dr. James Mitchell',
+      text: 'Nirajan demonstrated exceptional research rigor and problem-solving ability in developing the crop recommendation system. His ability to translate complex ML concepts into practical farmer-friendly tools was remarkable.',
     },
     {
-      name: 'Recommendation 2',
-      role: 'Leadership Team',
-      text: 'Working with Nirajan on various initiatives has been a great experience. He brings both technical expertise and creative thinking to every project.',
-      image: '/images/profile.jpg',
+      name: 'Sofia Garcia',
+      text: 'Working with Nirajan on AI for social impact initiatives has been transformative. His leadership, technical depth, and commitment to inclusive innovation set him apart as a true changemaker.',
+    },
+    {
+      name: 'Chen Wei',
+      text: 'Nirajan\'s contributions to our open-source ecosystem have been invaluable. He doesn\'t just write code—he thinks deeply about user experience and community impact. A developer you want on your team.',
+    },
+    {
+      name: 'Emma Thompson',
+      text: 'Nirajan\'s work exemplifies what we look for: technical excellence combined with genuine passion for mentoring others and scaling impact across communities.',
+    },
+    {
+      name: 'Marcus Johnson',
+      text: 'Nirajan\'s vision for building grassroots tech communities is infectious. His ability to inspire and mobilize young developers while maintaining technical credibility has been a cornerstone of our success.',
     },
   ];
 
@@ -24,30 +32,35 @@ function Recommendations() {
       <div className="max-w-6xl mx-auto relative z-10">
         <h2 className="text-4xl font-bold text-center text-neon-cyan mb-16">&lt;Recommendations /&gt;</h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {recommendations.map((rec, index) => (
             <div
               key={index}
-              className="bg-code-bg rounded-xl p-8 border-2 border-neon-cyan border-opacity-30 hover:border-neon-purple hover:border-opacity-100 transition-all relative hover:shadow-lg hover:shadow-neon-purple/20"
+              className="group relative rounded-2xl border border-neon-cyan/20 bg-[#060e1c]/70 backdrop-blur-sm p-6 hover:border-neon-cyan/50 transition-all shadow-lg hover:shadow-neon-cyan/10"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <img
-                  src={rec.image}
-                  alt={rec.name}
-                  className="w-16 h-16 rounded-full border-3 border-neon-pink"
-                />
+              {/* Accent top line */}
+              <div className="absolute top-0 left-0 w-12 h-1 bg-gradient-to-r from-neon-cyan to-neon-purple rounded-full group-hover:w-full transition-all"></div>
+
+              <div className="space-y-4 mt-2">
                 <div>
-                  <h3 className="text-light font-bold text-lg">{rec.name}</h3>
-                  <p className="text-neon-purple text-sm font-semibold">{rec.role}</p>
+                  <h3 className="text-lg font-bold text-light-text group-hover:text-neon-cyan/90 transition-colors">
+                    {rec.name}
+                  </h3>
                 </div>
-              </div>
 
-              <p className="text-light leading-relaxed italic">\"{rec.text}\"</p>
+                <p className="text-light-text/75 text-sm leading-relaxed italic">
+                  "{rec.text}"
+                </p>
 
-              <div className="flex gap-1 mt-4">
-                {[...Array(5)].map((_, i) => (
-                  <i key={i} className="fas fa-star text-neon-pink" style={{animationDelay: `${i * 0.1}s`}}></i>
-                ))}
+                <div className="flex gap-1 pt-2">
+                  {[...Array(5)].map((_, i) => (
+                    <i
+                      key={i}
+                      className="fas fa-star text-neon-pink/80 hover:text-neon-pink transition-colors"
+                      style={{ animationDelay: `${i * 0.1}s` }}
+                    ></i>
+                  ))}
+                </div>
               </div>
             </div>
           ))}
