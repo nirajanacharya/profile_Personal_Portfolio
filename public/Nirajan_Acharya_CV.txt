@@ -1,0 +1,64 @@
+Er. NIRAJAN ACHARYA
+AI Safety Governance Researcher
+Kathmandu, Nepal
+Email: engineernirajanacharya@gmail.com
+LinkedIn: https://www.linkedin.com/in/nirajanacharya/
+GitHub: https://github.com/nirajanacharya
+Medium: https://medium.com/@nirajan.acharya777
+
+SUMMARY
+AI Safety Governance Researcher with practical experience in evaluating, optimizing, and deploying intelligent systems with real-world impact. Specialized in LLM behavior analysis, predictive risk modeling, and transparent AI design across domains including public health, web security, and financial technology. Published researcher and peer reviewer in Scopus-indexed AI/ML journals, focused on adversarial robustness, bias detection, and ethical deployment.
+
+EDUCATION
+Kantipur Engineering College, Dhapakhel, Lalitpur
+Bachelor in Computer Engineering
+- Semester Topper (multiple semesters)
+- KEC Honor Award for Academic Excellence
+- Semester Scholarship recipient multiple times
+
+EXPERIENCE
+Lecturer, Kantipur Engineering College (Nov 2025 - Present)
+- Teaching undergraduate Computer Engineering courses
+- Mentoring student projects and research initiatives
+- Contributing to curriculum and departmental activities
+
+Junior AI Developer Intern, Anachroni (Feb 2024 - Jul 2024)
+- LLM optimization via prompt engineering, evaluation, and dataset refinement
+- Improved reliability and contextual accuracy via iterative testing
+- Supported ethical AI research, explainability, and compliance-ready documentation
+
+Collaborator, Omdena Local Chapter Challenge (Mar 2024)
+- Analyzed tuberculosis trends (2019-2023) with Python and Pandas
+- Built predictive visualizations and risk pattern analytics
+
+Freelance Developer, Nonprofits and Impact Sector (2023 - Present)
+- Delivered full-stack and data-driven web solutions for international nonprofits and national organizations
+- Projects include North Sound ACH, University of Haifa, Shivaraj Emergency Response System, VFAW, and others
+
+Full Stack Web Developer and Artificial Intelligence Engineer (Apr 2024 - Present)
+Platforms: Upwork, Fiverr, PeoplePerHour
+- Built and deployed web products, AI integrations, and automation workflows for global clients
+
+Pathao Ambassador, Pathao Nepal (Feb 2024 - Jul 2024)
+- Supported community-facing initiatives and engagement activities
+
+RESEARCH AND PUBLICATIONS
+- Surakshit Web: AI-Powered Phishing Detection (INJET)
+  DOI: 10.3126/injet.v2i2.78614
+- Crop Recommendation System Using ML (INJET)
+  DOI: 10.3126/injet.v1i2.66708
+- Peer Reviewer: International Research Journal of Multidisciplinary Technovation (Scopus Indexed)
+
+TECHNICAL SKILLS
+Programming: Python, C/C++, JavaScript, SQL, PHP
+AI and ML: Machine Learning, Deep Learning, NLP, Predictive Modeling, Data Analytics
+Web: React.js, Node.js, Express.js, MongoDB, Firebase, Vercel
+Data and MLOps: Pandas, NumPy, Scikit-learn, Matplotlib, Jupyter, Deployment Basics
+Tools: Git/GitHub, Linux, Postman, Notion, Google Workspace
+
+HONORS AND LEADERSHIP
+- United States Youth Council Nepal 2025 cohort member
+- Leapfrog Student Partner (2024)
+- Gold Microsoft Learn Student Ambassador
+- Omdena Local Chapter Leader
+- Global Youth Community (UNESCO)

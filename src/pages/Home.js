@@ -9,7 +9,7 @@ import Gallery from '../components/Gallery';
 
 function Home() {
   return (
-    <main>
+    <main id="main-content" tabIndex="-1">
       <Hero />
       <About />
       <Projects />

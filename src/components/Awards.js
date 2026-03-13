@@ -1,42 +1,29 @@
 import React from 'react';
 
 function Awards() {
-  const awards = [
-    {
-      title: 'Honorary Certificate',
-      organization: 'UNESCO',
-      year: '2024',
-    },
-    {
-      title: 'Innovation Award',
-      organization: 'Tech Summit Nepal',
-      year: '2024',
-    },
-    {
-      title: 'Best Open Source Contributor',
-      organization: 'GitHub Community',
-      year: '2023',
-    },
+  const honors = [
+    { title: 'KEC Honor Award for Academic Excellence', year: '2025', org: 'Kantipur Engineering College' },
+    { title: 'Semester Scholarship Recipient (Multiple Terms)', year: '2021-2025', org: 'Kantipur Engineering College' },
+    { title: 'Gold Microsoft Learn Student Ambassador', year: '2024-2025', org: 'Microsoft Learn' },
+    { title: 'United States Youth Council Nepal Cohort Member', year: '2025', org: 'US Youth Council Nepal' },
+    { title: 'Leapfrog Student Partner', year: '2024', org: 'Leapfrog Technology' },
+    { title: 'Global Youth Community Representative', year: 'Ongoing', org: 'UNESCO' },
   ];
 
   return (
-    <section id="awards" className="py-20 bg-darker px-5 relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-neon-pink opacity-15 rounded-full blur-3xl animate-pulse"></div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center text-neon-cyan mb-16">&lt;Honors & Awards /&gt;</h2>
+    <section id="honors" className="bg-gradient-to-b from-darker via-[#061122] to-darker px-5 py-24">
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold text-light-text md:text-4xl">Honors and Leadership</h2>
+          <p className="mt-3 text-light-text/70">Academic distinction, global youth leadership, and ecosystem contribution milestones.</p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {awards.map((award, index) => (
-            <div
-              key={index}
-              className="bg-code-bg rounded-xl p-8 border border-neon-cyan border-opacity-20 hover:border-opacity-50 transition-all text-center"
-            >
-              <i className="fas fa-medal text-5xl text-neon-orange mb-4 block"></i>
-              <h3 className="text-neon-cyan font-bold text-lg mb-2">{award.title}</h3>
-              <p className="text-light-text text-sm mb-2 font-semibold">{award.organization}</p>
-              <p className="text-light-text text-xs">{award.year}</p>
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {honors.map((item) => (
+            <div key={item.title} className="rounded-xl border border-neon-cyan/20 bg-[#071426]/80 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neon-cyan/70">{item.year}</p>
+              <h3 className="mt-2 text-lg font-semibold text-light-text">{item.title}</h3>
+              <p className="mt-1 text-sm text-light-text/65">{item.org}</p>
             </div>
           ))}
         </div>

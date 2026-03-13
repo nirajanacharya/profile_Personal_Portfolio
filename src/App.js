@@ -11,6 +11,7 @@ function App() {
   return (
     <Router>
       <div className="min-h-screen bg-darker text-light">
+        <a href="#main-content" className="skip-link">Skip to main content</a>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

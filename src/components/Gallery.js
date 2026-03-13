@@ -1,139 +1,79 @@
-import React from 'react';
+import React, { useMemo, useState } from 'react';
 
 function Gallery() {
-  const galleryItems = [
-    {
-      id: 1,
-      image: '/images/joining SFD.jpg',
-      caption: 'SFD Event',
-      category: 'community',
-    },
-    {
-      id: 2,
-      image: '/images/training- 1.jpg',
-      caption: 'Training Session 1',
-      category: 'workshop',
-    },
-    {
-      id: 3,
-      image: '/images/training-2.jpg',
-      caption: 'Training Session 2',
-      category: 'workshop',
-    },
-    {
-      id: 4,
-      image: '/images/training-3.jpg',
-      caption: 'Training Session 3',
-      category: 'workshop',
-    },
-    {
-      id: 5,
-      image: '/images/training-4.jpg',
-      caption: 'Training Session 4',
-      category: 'workshop',
-    },
-    {
-      id: 6,
-      image: '/images/training-5.jpg',
-      caption: 'Training Session 5',
-      category: 'workshop',
-    },
-    {
-      id: 7,
-      image: '/images/training-6.jpg',
-      caption: 'Training Session 6',
-      category: 'workshop',
-    },
-    {
-      id: 8,
-      image: '/images/award-lsp of the month2.jpg',
-      caption: 'LSP of the Month Award',
-      category: 'award',
-    },
-    {
-      id: 9,
-      image: '/images/award-pathao.jpg',
-      caption: 'Pathao Award',
-      category: 'award',
-    },
-    {
-      id: 10,
-      image: '/images/award-shivaraj-municipality.jpg',
-      caption: 'Shivaraj Municipality Award',
-      category: 'award',
-    },
-  ];
+  const galleryItems = useMemo(
+    () => [
+      { id: 1, image: '/images/profile.jpg', caption: 'Professional Portrait', category: 'profile' },
+      { id: 2, image: '/images/joining SFD.jpg', caption: 'Open Source Community Event', category: 'community' },
+      { id: 3, image: '/images/training- 1.jpg', caption: 'Hands-on Student Training Session', category: 'teaching' },
+      { id: 4, image: '/images/training-2.jpg', caption: 'Applied AI Classroom Workshop', category: 'teaching' },
+      { id: 5, image: '/images/training-3.jpg', caption: 'Data-Driven Lecture Delivery', category: 'teaching' },
+      { id: 6, image: '/images/training-4.jpg', caption: 'Practical Lab Mentoring', category: 'teaching' },
+      { id: 7, image: '/images/training-5.jpg', caption: 'AI Concepts in Action', category: 'teaching' },
+      { id: 8, image: '/images/training-6.jpg', caption: 'Audience Session on AI Personas', category: 'community' },
+      { id: 9, image: '/images/award-shivaraj-municipality.jpg', caption: 'Municipality Recognition', category: 'awards' },
+      { id: 10, image: '/images/award-pathao.jpg', caption: 'Industry Appreciation', category: 'awards' },
+      { id: 11, image: '/images/award-lsp of the month2.jpg', caption: 'Leadership Program Recognition', category: 'awards' },
+    ],
+    []
+  );
 
-  const [filter, setFilter] = React.useState('all');
-  const [selectedImage, setSelectedImage] = React.useState(null);
+  const [filter, setFilter] = useState('all');
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const filteredItems =
-    filter === 'all' ? galleryItems : galleryItems.filter((item) => item.category === filter);
+  const filters = ['all', 'profile', 'teaching', 'community', 'awards'];
+  const filteredItems = filter === 'all' ? galleryItems : galleryItems.filter((item) => item.category === filter);
 
   return (
-    <section id="gallery" className="py-20 bg-darker px-5 relative">
-      {/* Background glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-neon-cyan opacity-3 rounded-full blur-3xl"></div>
-      
-      <div className="max-w-6xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center text-neon-cyan mb-12">&lt;Photo Gallery /&gt;</h2>
+    <section id="gallery" className="bg-gradient-to-b from-darker via-[#061325] to-darker px-5 py-24">
+      <div className="relative z-10 mx-auto max-w-6xl">
+        <div className="mb-10 text-center">
+          <h2 className="text-3xl font-bold text-light-text md:text-4xl">Field and Community Gallery</h2>
+          <p className="mt-3 text-light-text/70">Snapshots from lectures, workshops, recognition events, and open-source communities.</p>
+        </div>
 
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
-          {['all', 'community', 'workshop', 'award'].map((cat) => (
+        <div className="mb-8 flex flex-wrap justify-center gap-3">
+          {filters.map((cat) => (
             <button
               key={cat}
               onClick={() => setFilter(cat)}
-              className={`px-6 py-2 rounded-lg font-semibold transition-all transform hover:scale-105 ${
+              className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-wide transition-all ${
                 filter === cat
-                  ? 'bg-neon-cyan text-darker border-2 border-neon-cyan shadow-lg shadow-neon-cyan/30'
-                  : 'bg-transparent border-2 border-neon-cyan border-opacity-40 text-neon-cyan hover:border-opacity-100 hover:shadow-lg hover:shadow-neon-cyan/20'
+                  ? 'border-neon-cyan bg-neon-cyan text-darker'
+                  : 'border-neon-cyan/35 text-neon-cyan hover:bg-neon-cyan/10'
               }`}
             >
-              {cat.charAt(0).toUpperCase() + cat.slice(1)}
+              {cat}
             </button>
           ))}
         </div>
 
-        {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {filteredItems.map((item) => (
-            <div
+            <button
               key={item.id}
               onClick={() => setSelectedImage(item)}
-              className="relative overflow-hidden rounded-xl border-2 border-neon-cyan border-opacity-30 hover:border-neon-purple hover:border-opacity-100 cursor-pointer group h-48 shadow-lg hover:shadow-neon-purple/20 transition-all"
+              className="group overflow-hidden rounded-xl border border-neon-cyan/25 bg-[#071326] text-left"
             >
-              <img
-                src={item.image}
-                alt={item.caption}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300 filter group-hover:brightness-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-darker via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-start p-4">
-                <p className="text-neon-cyan font-semibold">{item.caption}</p>
+              <div className="h-52 overflow-hidden">
+                <img src={item.image} alt={item.caption} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" />
               </div>
-            </div>
+              <div className="p-4">
+                <p className="text-sm font-semibold text-light-text">{item.caption}</p>
+                <p className="mt-1 text-xs uppercase tracking-wide text-neon-cyan/75">{item.category}</p>
+              </div>
+            </button>
           ))}
         </div>
 
-        {/* Modal */}
         {selectedImage && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50 backdrop-blur-sm"
-            onClick={() => setSelectedImage(null)}
-          >
-            <div className="relative max-w-3xl w-full" onClick={(e) => e.stopPropagation()}>
-              <button
-                onClick={() => setSelectedImage(null)}
-                className="absolute -top-8 right-0 text-neon-cyan hover:text-neon-purple text-3xl transition-colors"
-              >
-                ×
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 px-4" onClick={() => setSelectedImage(null)}>
+            <div className="w-full max-w-4xl" onClick={(event) => event.stopPropagation()}>
+              <button onClick={() => setSelectedImage(null)} className="mb-2 text-sm font-semibold text-neon-cyan">
+                Close
               </button>
-              <img
-                src={selectedImage.image}
-                alt={selectedImage.caption}
-                className="w-full rounded-lg border-2 border-neon-cyan shadow-lg shadow-neon-cyan/20"
-              />
-              <p className="text-center text-neon-cyan font-semibold mt-4">{selectedImage.caption}</p>
+              <img src={selectedImage.image} alt={selectedImage.caption} className="max-h-[80vh] w-full rounded-xl border border-neon-cyan/35 object-contain" />
+              <p className="mt-3 text-center text-sm text-light-text/80">{selectedImage.caption}</p>
             </div>
           </div>
         )}

@@ -2,19 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-0: #050b14;
+  --bg-1: #091525;
+  --bg-2: #10243a;
+  --line-soft: rgba(120, 190, 255, 0.08);
+  --text-main: #eaf4ff;
+  --text-dim: #9ab3cf;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  @apply bg-darker text-light font-mono;
+  @apply bg-darker text-light;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   line-height: 1.6;
-  background-image: 
-    linear-gradient(0deg, rgba(100, 213, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(100, 213, 255, 0.02) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image:
+    radial-gradient(circle at 10% -20%, rgba(68, 181, 255, 0.22), transparent 45%),
+    radial-gradient(circle at 90% -10%, rgba(23, 148, 255, 0.2), transparent 42%),
+    linear-gradient(180deg, var(--bg-0), var(--bg-1) 45%, var(--bg-2));
+  color: var(--text-main);
+}
+
+code,
+pre,
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+section {
+  position: relative;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(0deg, var(--line-soft) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.55;
 }
 
 @keyframes blink {
@@ -26,6 +63,17 @@ body {
   from {
     opacity: 0;
     transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes driftIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -99,6 +147,10 @@ body {
   animation: fadeInUp 0.5s ease forwards;
 }
 
+.animate-driftIn {
+  animation: driftIn 0.65s ease forwards;
+}
+
 .animate-glowPulse {
   animation: glowPulse 2s infinite;
 }
@@ -149,4 +201,49 @@ body {
 
 .glow-neon-purple {
   box-shadow: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+[role='button']:focus-visible {
+  outline: 2px solid #64d5ff;
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 12px;
+  top: -120px;
+  z-index: 100;
+  border: 1px solid #64d5ff;
+  background: #061223;
+  color: #eaf4ff;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+@media (max-width: 768px) {
+  section::before {
+    background-size: 34px 34px;
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }

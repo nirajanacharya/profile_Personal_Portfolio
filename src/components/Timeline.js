@@ -1,109 +1,90 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 function Timeline() {
-  const [visibleItems, setVisibleItems] = useState(new Set());
-
-  const timelineData = [
+  const experiences = [
     {
-      date: '2024',
-      title: 'Community Leadership',
-      description: 'Established and leading the Nepal Chapter of Omdena, fostering AI innovation and community growth.',
+      period: 'Nov 2025 - Present',
+      role: 'Lecturer',
+      org: 'Kantipur Engineering College, Lalitpur',
+      points: [
+        'Teaching undergraduate Computer Engineering courses.',
+        'Mentoring student academic projects and research initiatives.',
+        'Supporting curriculum development and departmental activities.',
+      ],
     },
     {
-      date: '2024',
-      title: 'LeapFrog Student Partner',
-      description: "Selected as a student partner for LeapFrog's technological advancement program.",
+      period: 'Apr 2024 - Present (2 years)',
+      role: 'Full Stack Web Developer and Artificial Intelligence Engineer',
+      org: 'Upwork, Fiverr, PeoplePerHour',
+      points: [
+        'Delivering end-to-end web products, AI-powered features, and client-facing automation systems.',
+        'Handling full project lifecycle: requirements, architecture, development, deployment, and optimization.',
+      ],
     },
     {
-      date: '2023',
-      title: 'Open Source Contributions',
-      description: 'Active contributor to multiple high-profile open source projects with over 50+ merged PRs.',
+      period: '2023 - Present',
+      role: 'Freelance Developer (International Nonprofits and Impact Sector)',
+      org: 'Remote',
+      points: [
+        'Delivered 12+ international projects and multiple freelancing assignments across nonprofit and mission-driven organizations.',
+        'Improved outreach, reporting, analytics, and process automation across distributed teams.',
+      ],
     },
     {
-      date: '2023',
-      title: 'Postman Student Expert',
-      description: 'Certified as Postman Student Expert, mastering API development and testing.',
+      period: 'Feb 2024 - Jul 2024',
+      role: 'Pathao Ambassador',
+      org: 'Pathao Nepal',
+      points: [
+        'Represented the Pathao brand in community-facing programs and engagement initiatives.',
+        'Supported awareness and communication efforts across targeted events and campaigns.',
+      ],
     },
     {
-      date: '2022',
-      title: 'UNESCO Member',
-      description: 'Joined UNESCO Global Youth Community for contributing to global initiatives.',
+      period: 'Feb 2024 - Jul 2024',
+      role: 'Junior AI Developer Intern',
+      org: 'Anachroni (AI LLM Startup), Remote',
+      points: [
+        'Contributed to LLM optimization using prompt engineering, response evaluation, and dataset refinement.',
+        'Enhanced reliability and contextual accuracy through iterative testing and validation.',
+        'Supported ethical AI documentation, explainability, and compliance-ready system ideation.',
+      ],
     },
     {
-      date: '2021',
-      title: 'Started Web Development',
-      description: 'Began full-stack web development journey with React, Node.js, and MongoDB.',
+      period: 'Mar 2024',
+      role: 'Collaborator, Data Science for Public Health Challenge',
+      org: 'Omdena Local Chapter, Remote',
+      points: [
+        'Analyzed tuberculosis trends with Python and Pandas using automation scripts.',
+        'Produced predictive visualizations and risk pattern analytics with transferability to fraud and anomaly detection.',
+      ],
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const items = document.querySelectorAll('.timeline-item');
-      const newVisibleItems = new Set();
-
-      items.forEach((item, index) => {
-        const rect = item.getBoundingClientRect();
-        if (rect.top < window.innerHeight * 0.8) {
-          newVisibleItems.add(index);
-        }
-      });
-
-      setVisibleItems(newVisibleItems);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section id="community" className="py-20 bg-darker px-5 relative overflow-hidden">
-      {/* Background glow elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-neon-purple opacity-15 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-neon-green opacity-15 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
-      
-      <div className="max-w-4xl mx-auto relative z-10">
-        <h2 className="text-4xl font-bold text-center text-neon-cyan mb-16">&lt;Leadership & Community /&gt;</h2>
+    <section id="experience" className="bg-gradient-to-b from-darker via-[#08152b] to-darker px-5 py-24">
+      <div className="relative z-10 mx-auto max-w-5xl">
+        <div className="mb-12 text-center">
+          <h2 className="text-3xl font-bold text-light-text md:text-4xl">Experience Timeline</h2>
+          <p className="mt-3 text-light-text/70">Applied AI engineering, teaching, and impact-focused software delivery.</p>
+        </div>
 
-        <div className="relative">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-1.5 h-full bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-pink rounded"></div>
-
-          {/* Timeline Items */}
-          <div className="space-y-12">
-            {timelineData.map((item, index) => (
-              <div
-                key={index}
-                className={`timeline-item transition-all duration-500 transform ${
-                  visibleItems.has(index)
-                    ? `opacity-100 ${index % 2 === 0 ? 'translate-x-0' : 'translate-x-0'}`
-                    : `opacity-0 ${index % 2 === 0 ? '-translate-x-20' : 'translate-x-20'}`
-                }`}
-              >
-                <div
-                  className={`flex ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'} items-center gap-8 md:gap-12`}
-                >
-                  {/* Content */}
-                  <div className="flex-1">
-                    <div className="bg-code-bg rounded-xl p-6 border border-neon-cyan border-opacity-20 hover:border-opacity-50 transition-all">
-                      <p className="text-neon-cyan font-semibold text-sm mb-1">{item.date}</p>
-                      <h3 className="text-neon-cyan text-lg font-bold mb-3">{item.title}</h3>
-                      <p className="text-light-text leading-relaxed">{item.description}</p>
-                    </div>
-                  </div>
-
-                  {/* Center Dot */}
-                  <div className="flex-shrink-0">
-                    <div className="w-6 h-6 bg-neon-purple border-4 border-darker rounded-full relative z-10"></div>
-                  </div>
-
-                  {/* Spacing */}
-                  <div className="flex-1"></div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="relative space-y-6 border-l-2 border-neon-cyan/30 pl-6 md:pl-10">
+          {experiences.map((item) => (
+            <article key={item.role} className="relative rounded-xl border border-neon-cyan/20 bg-[#061121]/80 p-6">
+              <div className="absolute -left-[34px] top-7 h-4 w-4 rounded-full border border-neon-cyan bg-[#0d2949] md:-left-[46px]"></div>
+              <p className="text-xs font-semibold uppercase tracking-wide text-neon-cyan/80">{item.period}</p>
+              <h3 className="mt-2 text-xl font-semibold text-light-text">{item.role}</h3>
+              <p className="text-sm text-light-text/65">{item.org}</p>
+              <ul className="mt-4 space-y-2 text-sm leading-relaxed text-light-text/75">
+                {item.points.map((point) => (
+                  <li key={point} className="flex gap-2">
+                    <span className="text-neon-cyan">-</span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
         </div>
       </div>
     </section>
