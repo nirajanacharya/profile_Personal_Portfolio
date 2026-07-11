@@ -6,6 +6,8 @@ function Navbar() {
     { label: 'About', href: '/#about' },
     { label: 'Experience', href: '/#experience' },
     { label: 'Projects', href: '/#projects' },
+    { label: 'Leadership', href: '/#leadership' },
+    { label: 'Workshops', href: '/#workshops' },
     { label: 'Honors', href: '/#honors' },
     { label: 'Gallery', href: '/#gallery' },
   ];

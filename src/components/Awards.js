@@ -2,20 +2,19 @@ import React from 'react';
 
 function Awards() {
   const honors = [
-    { title: 'KEC Honor Award for Academic Excellence', year: '2025', org: 'Kantipur Engineering College' },
+    { title: 'Pride of KEC', year: '2025', org: 'Kantipur Engineering College' },
+    { title: 'Municipal Appreciation (Emergency Response System)', year: '2024', org: 'Shivaraj Municipality' },
     { title: 'Semester Scholarship Recipient (Multiple Terms)', year: '2021-2025', org: 'Kantipur Engineering College' },
-    { title: 'Gold Microsoft Learn Student Ambassador', year: '2024-2025', org: 'Microsoft Learn' },
-    { title: 'United States Youth Council Nepal Cohort Member', year: '2025', org: 'US Youth Council Nepal' },
-    { title: 'Leapfrog Student Partner', year: '2024', org: 'Leapfrog Technology' },
-    { title: 'Global Youth Community Representative', year: 'Ongoing', org: 'UNESCO' },
+    { title: 'AI Engineering Build Camp Graduate', year: '2024', org: 'AI Build Camp' },
+    { title: 'KEC Honor Award for Academic Excellence', year: '2025', org: 'Kantipur Engineering College' },
   ];
 
   return (
     <section id="honors" className="bg-gradient-to-b from-darker via-[#061122] to-darker px-5 py-24">
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl font-bold text-light-text md:text-4xl">Honors and Leadership</h2>
-          <p className="mt-3 text-light-text/70">Academic distinction, global youth leadership, and ecosystem contribution milestones.</p>
+          <h2 className="text-3xl font-bold text-light-text md:text-4xl">Honors & Awards</h2>
+          <p className="mt-3 text-light-text/70">Academic distinction and recognition for impactful technical contributions.</p>
         </div>
 
         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">

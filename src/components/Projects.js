@@ -3,34 +3,19 @@ import React from 'react';
 function Projects() {
   const projects = [
     {
-      title: 'Shivaraj Emergency Response System (Nepal)',
-      description: 'Built a real-time multilingual emergency management web platform adopted by the municipality for response coordination.',
-      tags: ['React', 'Real-time Web', 'Public Sector', 'Localization'],
+      title: 'Cyber Sachet: Multilingual AI Legal & Cyber Assistant',
+      description: 'Architected an AI-powered information retrieval system using Multilingual RAG. It democratizes access to cybersecurity knowledge and Nepali legal resources, bridging language barriers in critical public information.',
+      tags: ['Multilingual RAG', 'LLMs', 'Information Retrieval', 'AI for Impact'],
     },
     {
-      title: 'North Sound ACH (USA)',
-      description: 'Guided LLM integration for documentation automation and process workflows to improve operational efficiency.',
-      tags: ['LLM Integration', 'Workflow Automation', 'AI Documentation'],
+      title: 'Shivaraj Emergency Response System',
+      description: 'Developed a real-time emergency management web platform. The system was officially adopted by Shivaraj Municipality, earning a formal Municipal Appreciation for significantly improving local disaster response coordination.',
+      tags: ['Real-time Web', 'Public Sector', 'Crisis Management', 'Local Governance'],
     },
     {
-      title: 'University of Haifa (Israel)',
-      description: 'Enhanced data infrastructure and analytics systems to improve research efficiency and data-informed decisions.',
-      tags: ['Data Engineering', 'Analytics', 'Research Systems'],
-    },
-    {
-      title: 'Omdena Public Health Collaboration',
-      description: 'Analyzed tuberculosis trends (2019-2023) using Python, Pandas, and automation scripts with predictive visualizations.',
-      tags: ['Python', 'Pandas', 'Risk Analytics', 'Public Health'],
-    },
-    {
-      title: 'Vets for Animal Welfare (VFAW)',
-      description: 'Developed a website to improve outreach, program communication, and volunteer engagement.',
-      tags: ['Frontend', 'Nonprofit Tech', 'Content Systems'],
-    },
-    {
-      title: 'Digital Performance and SEO Programs',
-      description: 'Delivered SEO, performance, and analytics optimization for USA and Tanzania impact organizations.',
-      tags: ['Web Performance', 'SEO', 'Analytics Tracking'],
+      title: 'Transformer Representation Learning',
+      description: 'Ongoing independent research investigating the internal mechanisms of Transformer models. Focused on positional representation learning, long context handling, and advancing mechanistic interpretability for AI alignment.',
+      tags: ['AI Research', 'Transformers', 'Mechanistic Interpretability', 'Alignment'],
     },
   ];
 

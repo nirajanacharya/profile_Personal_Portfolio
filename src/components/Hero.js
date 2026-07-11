@@ -26,16 +26,16 @@ function Hero() {
   ];
 
   const highlights = [
-    { label: 'Current Role', value: 'Lecturer, Kantipur Engineering College' },
-    { label: 'Professional Track', value: 'Full Stack Web Developer and AI Engineer' },
-    { label: 'Research Profile', value: 'Scopus-Indexed Peer Reviewer' },
+    { label: 'Current Role', value: 'Lecturer & AI Researcher' },
+    { label: 'Professional Track', value: 'Computer Engineer & AI Tech Lead' },
+    { label: 'Research Focus', value: 'LLMs, NLP & AI Alignment' },
   ];
 
   const keyStats = [
+    { value: 'AI', label: 'Researcher' },
+    { value: 'Social', label: 'Impact Tech' },
     { value: 'B.E.', label: 'Computer Engineering' },
-    { value: 'Semester Topper', label: 'Academic Achievement' },
-    { value: '12+', label: 'International Projects Delivered' },
-    { value: '2', label: 'AI/ML Publications' },
+    { value: 'Lecturer', label: 'KEC' },
   ];
 
   return (
@@ -47,17 +47,15 @@ function Hero() {
         <div className="animate-driftIn space-y-6">
           <span className="inline-flex items-center gap-2 rounded-full border border-neon-cyan/40 bg-neon-cyan/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-neon-cyan">
             <i className="fas fa-shield-alt"></i>
-            AI Safety Governance Portfolio
+            AI Researcher & Engineer
           </span>
 
           <h1 className="text-4xl font-bold leading-tight text-light-text md:text-6xl">
-            Building trustworthy AI systems for public impact.
+            Building trustworthy AI systems through research, engineering, and education.
           </h1>
 
           <p className="max-w-2xl text-base leading-relaxed text-light-text/75 md:text-lg">
-            I build practical software that people can use, trust, and benefit from.
-            Alongside research in AI safety governance, I work as a Full Stack Web Developer and Artificial Intelligence Engineer
-            delivering client solutions through Upwork, Fiverr, and PeoplePerHour.
+            I am a Computer Engineer and independent AI researcher focused on Transformer Architectures, NLP, LLMs, and Retrieval-Augmented Generation. As a Lecturer and the AI & Technical Lead at Cyber Sachet, I am dedicated to AI alignment and leveraging technology for real-world social impact.
           </p>
 
           <div className="grid gap-3 sm:grid-cols-2">
@@ -133,8 +131,8 @@ function Hero() {
           </div>
 
           <div className="mt-5 rounded-lg border border-neon-blue/35 bg-neon-blue/10 p-4 text-sm text-light-text/80">
-            <p className="font-semibold text-neon-blue">Research and Ethics Focus</p>
-            <p className="mt-2">Adversarial robustness, bias detection, transparent model behavior, and deployment governance.</p>
+            <p className="font-semibold text-neon-blue">Research Focus</p>
+            <p className="mt-2">Transformer architectures, long context models, mechanistic interpretability, and AI alignment.</p>
           </div>
         </div>
       </div>

@@ -22,14 +22,26 @@ function Research() {
       link: 'https://doi.org/10.3126/injet.v1i2.66708',
       tags: ['Machine Learning', 'Predictive Modeling', 'Agritech'],
     },
+    {
+      title: 'Hybrid CRNN with Seq2Seq Attention Mechanism for Handwriting Recognition',
+      venue: 'Under Review',
+      doi: 'N/A',
+      year: '2025',
+      description:
+        'Research on offline handwriting recognition utilizing a hybrid Convolutional Recurrent Neural Network (CRNN) architecture combined with sequence-to-sequence attention mechanisms.',
+      link: '#',
+      tags: ['Computer Vision', 'Deep Learning', 'OCR'],
+    },
   ];
 
   const researchAreas = [
-    'LLM behavior analysis',
-    'Adversarial robustness',
-    'Bias detection and mitigation',
-    'Predictive risk modeling',
-    'Transparent and ethical deployment',
+    'Transformer Architectures',
+    'Positional Representation Learning',
+    'Long Context Models',
+    'Mechanistic Interpretability',
+    'Trustworthy AI & AI Alignment',
+    'Retrieval-Augmented Generation (RAG)',
+    'Natural Language Processing',
   ];
 
   return (
