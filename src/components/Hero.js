@@ -110,7 +110,7 @@ function Hero() {
 
         <div className="animate-driftIn rounded-2xl border border-neon-purple/30 bg-surface-1/80 p-6 shadow-xl shadow-neon-purple/10" style={{ animationDelay: '0.15s' }}>
           <div className="overflow-hidden rounded-xl border border-neon-purple/35">
-            <img src="/images/profile.jpg" alt="Nirajan Acharya" className="h-full w-full object-cover" />
+            <img src="/images/profile.jpg?v=2" alt="Nirajan Acharya" className="h-full w-full object-cover" />
           </div>
 
           <div className="mt-6 grid grid-cols-2 gap-3">
