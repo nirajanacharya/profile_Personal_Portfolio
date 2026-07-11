@@ -48,12 +48,12 @@ function ResearchBlog() {
   ];
 
   return (
-    <section id="main-content" tabIndex="-1" className="min-h-screen bg-gradient-to-b from-darker via-[#061224] to-darker px-5 pt-32 pb-24">
+    <section id="main-content" tabIndex="-1" className="min-h-screen bg-gradient-to-b from-darker via-surface-2 to-darker px-5 pt-32 pb-24">
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <Link
             to="/"
-            className="inline-flex items-center gap-2 rounded-full border border-neon-cyan/45 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-neon-cyan hover:bg-neon-cyan/10"
+            className="inline-flex items-center gap-2 rounded-full border border-neon-purple/45 px-5 py-2 text-xs font-semibold uppercase tracking-wide text-neon-purple hover:bg-neon-purple/10"
           >
             <i className="fas fa-arrow-left"></i>
             Back to Home
@@ -69,8 +69,8 @@ function ResearchBlog() {
             onClick={() => setActiveTab('research')}
             className={`rounded-full border px-6 py-2 text-sm font-semibold transition-all ${
               activeTab === 'research'
-                ? 'border-neon-cyan bg-neon-cyan text-darker'
-                : 'border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10'
+                ? 'border-neon-purple bg-neon-purple text-darker'
+                : 'border-neon-purple/40 text-neon-purple hover:bg-neon-purple/10'
             }`}
           >
             Research Publications
@@ -79,8 +79,8 @@ function ResearchBlog() {
             onClick={() => setActiveTab('writing')}
             className={`rounded-full border px-6 py-2 text-sm font-semibold transition-all ${
               activeTab === 'writing'
-                ? 'border-neon-cyan bg-neon-cyan text-darker'
-                : 'border-neon-cyan/40 text-neon-cyan hover:bg-neon-cyan/10'
+                ? 'border-neon-purple bg-neon-purple text-darker'
+                : 'border-neon-purple/40 text-neon-purple hover:bg-neon-purple/10'
             }`}
           >
             Technical Writing
@@ -90,16 +90,16 @@ function ResearchBlog() {
         {activeTab === 'research' && (
           <div className="grid gap-6 md:grid-cols-2">
             {research.map((item) => (
-              <article key={item.doi} className="rounded-xl border border-neon-cyan/20 bg-[#061122]/80 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-neon-cyan/75">{item.publisher} | {item.year}</p>
+              <article key={item.doi} className="rounded-xl border border-neon-purple/20 bg-surface-1/80 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-neon-purple/75">{item.publisher} | {item.year}</p>
                 <h2 className="mt-2 text-xl font-semibold text-light-text">{item.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-light-text/75">{item.description}</p>
-                <p className="mt-3 text-sm text-neon-cyan/85">DOI: {item.doi}</p>
+                <p className="mt-3 text-sm text-neon-purple/85">DOI: {item.doi}</p>
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neon-cyan hover:text-neon-blue"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neon-purple hover:text-neon-pink"
                 >
                   Open Publication
                   <i className="fas fa-external-link-alt"></i>
@@ -112,15 +112,15 @@ function ResearchBlog() {
         {activeTab === 'writing' && (
           <div className="grid gap-6 md:grid-cols-2">
             {writings.map((item) => (
-              <article key={item.title} className="rounded-xl border border-neon-cyan/20 bg-[#061122]/80 p-6">
-                <p className="text-xs font-semibold uppercase tracking-wide text-neon-cyan/75">{item.platform} | {item.year}</p>
+              <article key={item.title} className="rounded-xl border border-neon-purple/20 bg-surface-1/80 p-6">
+                <p className="text-xs font-semibold uppercase tracking-wide text-neon-purple/75">{item.platform} | {item.year}</p>
                 <h2 className="mt-2 text-xl font-semibold text-light-text">{item.title}</h2>
                 <p className="mt-3 text-sm leading-relaxed text-light-text/75">{item.description}</p>
                 <a
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neon-cyan hover:text-neon-blue"
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-neon-purple hover:text-neon-pink"
                 >
                   Read Article
                   <i className="fas fa-external-link-alt"></i>

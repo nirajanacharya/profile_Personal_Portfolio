@@ -25,7 +25,7 @@ function Recommendations() {
   ];
 
   return (
-    <section id="impact" className="bg-gradient-to-b from-darker via-[#071224] to-darker px-5 py-24">
+    <section id="impact" className="bg-gradient-to-b from-darker via-surface-2 to-darker px-5 py-24">
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-10 text-center">
           <h2 className="text-3xl font-bold text-light-text md:text-4xl">Evidence of Impact</h2>
@@ -36,9 +36,9 @@ function Recommendations() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {signals.map((signal) => (
-            <div key={signal.title} className="rounded-xl border border-neon-cyan/20 bg-[#081528]/80 p-6">
+            <div key={signal.title} className="rounded-xl border border-neon-purple/20 bg-surface-1/80 p-6">
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-neon-cyan/35 bg-neon-cyan/10 text-neon-cyan">
+                <div className="flex h-10 w-10 items-center justify-center rounded-lg border border-neon-purple/35 bg-neon-purple/10 text-neon-purple">
                   <i className={`fas ${signal.icon}`}></i>
                 </div>
                 <h3 className="text-lg font-semibold text-light-text">{signal.title}</h3>

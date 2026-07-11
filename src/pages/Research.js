@@ -24,12 +24,12 @@ function Research() {
     },
     {
       title: 'Hybrid CRNN with Seq2Seq Attention Mechanism for Handwriting Recognition',
-      venue: 'Under Review',
-      doi: 'N/A',
-      year: '2025',
+      venue: 'INJET',
+      doi: '10.3126/injet.v3i2.95148',
+      year: '2026',
       description:
         'Research on offline handwriting recognition utilizing a hybrid Convolutional Recurrent Neural Network (CRNN) architecture combined with sequence-to-sequence attention mechanisms.',
-      link: '#',
+      link: 'https://doi.org/10.3126/injet.v3i2.95148',
       tags: ['Computer Vision', 'Deep Learning', 'OCR'],
     },
   ];
@@ -45,7 +45,7 @@ function Research() {
   ];
 
   return (
-    <section id="main-content" tabIndex="-1" className="min-h-screen bg-gradient-to-b from-darker via-[#08162d] to-darker px-5 pt-32 pb-24">
+    <section id="main-content" tabIndex="-1" className="min-h-screen bg-gradient-to-b from-darker via-surface-2 to-darker px-5 pt-32 pb-24">
       <div className="relative z-10 mx-auto max-w-6xl">
         <div className="mb-10 grid gap-8 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
           <div>
@@ -55,12 +55,12 @@ function Research() {
               International Research Journal of Multidisciplinary Technovation (Scopus Indexed).
             </p>
           </div>
-          <div className="rounded-xl border border-neon-cyan/20 bg-[#071326]/80 p-6">
-            <p className="text-sm font-semibold uppercase tracking-wide text-neon-cyan/80">Research Focus</p>
+          <div className="rounded-xl border border-neon-purple/20 bg-surface-1/80 p-6">
+            <p className="text-sm font-semibold uppercase tracking-wide text-neon-purple/80">Research Focus</p>
             <ul className="mt-3 space-y-2 text-sm text-light-text/75">
               {researchAreas.map((area) => (
                 <li key={area} className="flex gap-2">
-                  <span className="text-neon-cyan">-</span>
+                  <span className="text-neon-purple">-</span>
                   <span>{area}</span>
                 </li>
               ))}
@@ -70,14 +70,14 @@ function Research() {
 
         <div className="grid gap-6 md:grid-cols-2">
           {papers.map((paper) => (
-            <article key={paper.doi} className="rounded-2xl border border-neon-cyan/20 bg-[#071223]/80 p-7">
-              <p className="text-xs font-semibold uppercase tracking-wide text-neon-cyan/75">{paper.venue} | {paper.year}</p>
+            <article key={paper.doi} className="rounded-2xl border border-neon-purple/20 bg-surface-1/80 p-7">
+              <p className="text-xs font-semibold uppercase tracking-wide text-neon-purple/75">{paper.venue} | {paper.year}</p>
               <h2 className="mt-2 text-2xl font-semibold text-light-text">{paper.title}</h2>
               <p className="mt-3 text-sm leading-relaxed text-light-text/75">{paper.description}</p>
-              <p className="mt-3 text-sm text-neon-cyan/80">DOI: {paper.doi}</p>
+              <p className="mt-3 text-sm text-neon-purple/80">DOI: {paper.doi}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {paper.tags.map((tag) => (
-                  <span key={tag} className="rounded-full border border-neon-cyan/30 bg-neon-cyan/10 px-3 py-1 text-xs font-semibold text-neon-cyan/85">
+                  <span key={tag} className="rounded-full border border-neon-purple/30 bg-neon-purple/10 px-3 py-1 text-xs font-semibold text-neon-purple/85">
                     {tag}
                   </span>
                 ))}
@@ -86,7 +86,7 @@ function Research() {
                 href={paper.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-neon-cyan hover:text-neon-blue"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-neon-purple hover:text-neon-pink"
               >
                 View Publication
                 <i className="fas fa-external-link-alt"></i>
